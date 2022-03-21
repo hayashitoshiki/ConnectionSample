@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.myapp.connectionsample.ui.screen.HomeScreen
+import com.myapp.connectionsample.ui.screen.HttpScreen
 
 /**
  * 画面定義
@@ -14,6 +15,7 @@ import com.myapp.connectionsample.ui.screen.HomeScreen
  */
 sealed class Screens(val title: String, val route: String) {
     object Home : Screens("Home", "home")
+    object Http : Screens("Http", "http")
 }
 
 /**
@@ -29,6 +31,9 @@ fun AppNavHost(navController: NavHostController) {
     ) {
         composable(Screens.Home.route) {
             HomeScreen(navController)
+        }
+        composable(Screens.Http.route) {
+            HttpScreen()
         }
     }
 }
