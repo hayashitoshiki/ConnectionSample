@@ -34,15 +34,19 @@ android {
     productFlavors {
         production {
             buildConfigField "String", "httpServer", "\"http://10.0.2.2:3000//\""
+            buildConfigField "String", "socketServer", "\"http://10.0.2.2:3000\""
         }
         staging {
             buildConfigField "String", "httpServer", "\"http://10.0.2.2:3000//\""
+            buildConfigField "String", "socketServer", "\"http://10.0.2.2:3000\""
         }
         develop {
             buildConfigField "String", "httpServer", "\"http://10.0.2.2:3000//\""
+            buildConfigField "String", "socketServer", "\"http://10.0.2.2:3000\""
         }
         local {
             buildConfigField "String", "httpServer", "\"http://10.0.2.2:3000//\""
+            buildConfigField "String", "socketServer", "\"http://10.0.2.2:3000\""
         }
     }
     compileOptions {
@@ -99,4 +103,7 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$rootProject.hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$rootProject.hilt_version"
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+
+    //socket.io
+    implementation 'io.socket:socket.io-client:2.0.1'
 }
