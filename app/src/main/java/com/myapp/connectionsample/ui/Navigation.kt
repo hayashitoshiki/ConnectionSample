@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.myapp.connectionsample.ui.screen.GrpcScreen
 import com.myapp.connectionsample.ui.screen.HomeScreen
 import com.myapp.connectionsample.ui.screen.HttpScreen
 import com.myapp.connectionsample.ui.screen.SocketScreen
@@ -18,6 +19,7 @@ sealed class Screens(val title: String, val route: String) {
     object Home : Screens("Home", "home")
     object Http : Screens("Http", "http")
     object Socket : Screens("Socket", "socket")
+    object Grpc : Screens("Grpc", "grpc")
 }
 
 /**
@@ -39,6 +41,9 @@ fun AppNavHost(navController: NavHostController) {
         }
         composable(Screens.Socket.route) {
             SocketScreen()
+        }
+        composable(Screens.Grpc.route) {
+            GrpcScreen()
         }
     }
 }

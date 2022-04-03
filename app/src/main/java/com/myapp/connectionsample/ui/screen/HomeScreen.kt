@@ -15,13 +15,15 @@ import com.myapp.connectionsample.ui.Screens
 fun HomeScreen(navController: NavHostController) {
     val httpNavigate = { navController.navigate(Screens.Http.route) }
     val socketNavigate = { navController.navigate(Screens.Socket.route) }
-    HomeContent(httpNavigate, socketNavigate)
+    val grpcNavigate = { navController.navigate(Screens.Grpc.route) }
+    HomeContent(httpNavigate, socketNavigate, grpcNavigate)
 }
 
 @Composable
 private fun HomeContent(
     httpNavigate: () ->Unit,
-    socketNavigate: () ->Unit
+    socketNavigate: () ->Unit,
+    grpcNavigate: () -> Unit
 ) {
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -34,6 +36,9 @@ private fun HomeContent(
         }
         Button(onClick = { socketNavigate() }) {
             Text(text = "Socket Sample")
+        }
+        Button(onClick = { grpcNavigate() }) {
+            Text(text = "gRPC Sample")
         }
     }
 }
