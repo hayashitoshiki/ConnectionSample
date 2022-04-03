@@ -10,3 +10,8 @@ https://github.com/hayashitoshiki/ConnectionSample/tree/master/app/src/main/java
 https://github.com/hayashitoshiki/ConnectionSample/blob/master/app/src/main/java/com/myapp/connectionsample/data/repository/HttpRepositoryImpl.kt
 * エラー関連  
 https://github.com/hayashitoshiki/ConnectionSample/tree/master/app/src/main/java/com/myapp/connectionsample/model
+### Socket通信関連
+* Service 
+https://github.com/hayashitoshiki/ConnectionSample/blob/master/app/src/main/java/com/myapp/connectionsample/data/remote/SocketManager.kt
+* 呼び出し  
+https://github.com/hayashitoshiki/ConnectionSample/blob/master/app/src/main/java/com/myapp/connectionsample/data/repository/SocketRepositoryImpl.kt
