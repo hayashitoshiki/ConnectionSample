@@ -82,42 +82,7 @@ android {
         }
     }
 }
-//protobuf {
-//    protoc {
-//        artifact = "com.google.protobuf:protoc:$rootProject.protobuf_version"
-//    }
-//    plugins {
-//        java {
-//            artifact = "io.grpc:protoc-gen-grpc-java:$rootProject.grpc_version"
-//        }
-//        grpc {
-//            artifact = "io.grpc:protoc-gen-grpc-java:$rootProject.grpc_version"
-//        }
-//        grpckt {
-//            artifact = "io.grpc:protoc-gen-grpc-kotlin:$rootProject.grpc_kotlin_version:jdk7@jar"
-//        }
-//    }
-//    generateProtoTasks {
-//        all().forEach {
-//            it.plugins {
-//                java {
-//                    option "lite"
-//                }
-//                grpc {
-//                    option "lite"
-//                }
-//                grpckt {
-//                    option "lite"
-//                }
-//            }
-//            it.builtins {
-//                kotlin {
-//                    option "lite"
-//                }
-//            }
-//        }
-//    }
-//}
+
 protobuf {
     protoc { artifact = 'com.google.protobuf:protoc:3.11.0' }
     plugins {
@@ -140,25 +105,6 @@ protobuf {
         }
     }
 }
-
-//protobuf {
-//    protoc { artifact = 'com.google.protobuf:protoc:3.4.0' }
-//    plugins {
-//        javalite { artifact = "com.google.protobuf:protoc-gen-javalite:3.0.0" }
-//        grpc { artifact = 'io.grpc:protoc-gen-grpc-java:1.24.0' // CURRENT_GRPC_VERSION
-//        }
-//    }
-//    generateProtoTasks {
-//        all().each { task ->
-//            task.plugins {
-//                javalite {}
-//                grpc { // Options added to --grpc_out
-//                    option 'lite' }
-//            }
-//        }
-//    }
-//}
-
 
 dependencies {
 
@@ -196,6 +142,7 @@ dependencies {
     //socket.io
     implementation 'io.socket:socket.io-client:2.0.1'
 
+    // gRPC
     implementation 'com.google.guava:guava:27.0.1-android'
     implementation "io.grpc:grpc-okhttp:1.29.0"
     implementation "io.grpc:grpc-protobuf:1.29.0"

@@ -26,5 +26,9 @@ interface GrpcContract {
      */
     sealed class Event : BaseContract.Event {
         object CallUnaryApi: Event()
+
+        data class SendSheep(val name: String): Event()
+
+        data class SendMessage(val message: String): Event()
     }
 }
